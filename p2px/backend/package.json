@@ -1,0 +1,45 @@
+{
+  "name": "meanauthapp",
+  "version": "1.0.0",
+  "description": "MEAN stack authentication app",
+  "main": "app.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node app",
+    "start-dev": "nodemon ./app.js"
+  },
+  "dependencies": {
+    "base64-img": "^1.0.4",
+    "bcryptjs": "^2.4.3",
+    "bitcoin": "^3.0.1",
+    "body-parser": "*",
+    "bs58": "^4.0.1",
+    "buffer": "^5.1.0",
+    "buffer-from": "^1.1.1",
+    "cors": "*",
+    "crypto": "^1.0.1",
+    "elliptic": "^6.4.0",
+    "email-verification": "^0.4.6",
+    "express": "*",
+    "express-jwt": "^5.3.0",
+    "image-to-base64": "^2.0.1",
+    "json-rpc2": "^1.0.2",
+    "jsonwebtoken": "^8.1.1",
+    "mongoose": "*",
+    "node-json-rpc": "0.0.1",
+    "node-json-rpc2": "^1.1.0",
+    "package.json": "^2.0.1",
+    "passport": "^0.4.0",
+    "passport-jwt": "*",
+    "passport-local": "^1.0.0",
+    "ripemd160": "^2.0.2",
+    "truffle-contract": "^3.0.3",
+    "underscore-node": "^0.1.2",
+    "web3-utils": "^1.0.0-beta.30"
+  },
+  "author": "Chhetri Kb",
+  "license": "ISC",
+  "devDependencies": {
+    "nodemon": "^1.18.4"
+  }
+}

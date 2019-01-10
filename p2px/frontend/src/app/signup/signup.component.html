@@ -1,0 +1,98 @@
+
+<div class="row">
+    <div class="col-sm-4"></div>
+  <div class="col-sm-4">
+      <div class="card screencenter myformfontsize">
+                <div class="card-header text-center text-primary">
+                  Login or Register to Trade
+                </div> 
+                <div class="card-body">   
+               
+                <ul class="nav nav-tabs nav-justified " role="tablist">
+                  <li class="nav-item">
+                    <a class="nav-link" data-toggle="tab" href="#home">Login</a>
+                  </li>
+                  <li class="nav-item">
+                    <a class="nav-link " data-toggle="tab" href="#menu1">Register</a>
+                  </li>                  
+                </ul>
+              
+                <!-- Tab panes -->
+                <div class="tab-content">
+                  
+                    <div id="home" class="container tab-pane active"><br>
+                    <form  [formGroup]="myangForm" (ngSubmit)="login()">
+  
+                <div class="form-group">
+                    <label for="inputsm">Email:</label>
+                    <input class="form-control inputsm"  placeholder="Email"   autofocus="true" type="email" ng-trim="true"  class="form-control" formControlName="myemaillogin"  autocomplete="off" required>
+                  </div>
+
+                  <div class="form-group">
+                      <label for="inputsm">Password:</label>
+                      <input class="form-control inputsm" placeholder="Password"  ng-trim="true"  class="form-control"  type="password" formControlName="pwdlogin" autocomplete="off" required>                            
+                    </div> 
+
+                    <div class="form-group">
+                          <button type="submit"  [disabled]="!myangForm.valid" class="btn btn-primary">LogIn</button>                             
+                      </div>
+                    </form> 
+                  </div>
+
+                  <div id="menu1" class="container tab-pane fade"><br>
+                    <form  [formGroup]="angForm" (ngSubmit)="Reg()" enctype="multipart/form-data">
+                            <div class="form-group">
+                              <label for="inputsm">First Name:</label>
+                              <input class="form-control inputsm"  placeholder="Firstname" type="text"  ng-trim="true"  class="form-control"   autofocus="true" formControlName="fname" autocomplete="off" required>                    
+                            </div>
+            
+                            <div class="form-group">
+                                <label for="inputsm">Last Name:</label>
+                                <input class="form-control inputsm"   placeholder="Lastname" type="text"  ng-trim="true"  class="form-control"  formControlName="lname" autocomplete="off" required>
+                                <!-- <div *ngIf="submitted && f.Lastname.errors" class="invalid-feedback">
+                                  <div *ngIf="f.Lastname.errors.required">Lastname is required</div>
+                              </div> -->
+                              </div>
+            
+                              <div class="form-group">
+                                  <label for="inputsm">Phone Number:</label>
+                                  <input class="form-control inputsm" placeholder="Phonenumber" type="number" ng-trim="true"  class="form-control" formControlName="phnumber" autocomplete="off" maxlength="10" minlength="10" required>
+                                  <!-- <div *ngIf="submitted && f.Phonenumber.errors" class="invalid-feedback">
+                                      <div *ngIf="f.Phonenumber.errors.required">Phonenumber is required</div>
+                                  </div> -->
+                                </div>
+            
+                                <div class="form-group">
+                                    <label for="inputsm">Email:</label>
+                                    <input class="form-control inputsm"  placeholder="Email" type="email"  ng-trim="true"  class="form-control" formControlName="myemail"  autocomplete="off" required>
+                                    <!-- <div *ngIf="submitted && f.Email.errors" class="invalid-feedback">
+                                      <div *ngIf="f.Email.errors.required">Email is required</div>
+                                  </div> -->
+                                  </div>
+            
+                                  <div class="form-group">
+                                      <label for="inputsm">Password:</label>
+                                      <input class="form-control inputsm" placeholder="Password"  ng-trim="true"  class="form-control"  type="password" formControlName="pwd" autocomplete="off" required>
+                                      <!-- <div *ngIf="submitted && f.Password.errors" class="invalid-feedback">
+                                          <div *ngIf="f.Password.errors.required">Password is required</div>
+                                      </div> -->
+                                    </div> 
+                                    <div class="form-group">      
+                                        <label for="inputsm">Profile:</label>                                 
+                                        <input type="file" (change)="onUploadChange($event)" accept=".png, .jpg, .jpeg, .pdf">
+                                        <img *ngFor="let a of base64textString"  src={{a}} alt="">
+                                     </div>
+
+                                    <div class="form-group">                                                                               
+                                          <button type="submit" #btnsgn [disabled]="!angForm.valid" class="btn btn-primary">Signup</button>                             
+                                      </div>          
+                                    </form>
+                    
+                  </div>                 
+
+                </div>
+              </div>      
+  </div>
+  <div class="col-sm-04"></div>  
+  </div>
+ <br>

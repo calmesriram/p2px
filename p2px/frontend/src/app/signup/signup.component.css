@@ -1,0 +1,14 @@
+@import url('https://fonts.googleapis.com/css?family=Source+Sans+Pro');
+.screencenter{
+    margin-top:18%;
+    padding:2%;    
+}
+.back{
+background-color: whitesmoke;
+}
+
+.myformfontsize{
+    font-size: 14px;
+    /* font-weight: 600; */
+    font-family: "Source Sans Pro", sans-serif;
+}

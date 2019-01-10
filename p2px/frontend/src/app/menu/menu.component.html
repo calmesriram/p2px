@@ -1,0 +1,163 @@
+<div class="container formsize">
+      <div class="row">
+          <div class="col-md-4">
+              <div class="panel panel-default">
+                  <div class="panel-heading" style="text-align: center"><b>Buy Details</b></div>
+                  <div class="panel-body">
+                      <div class="table-responsive tablesize table-striped table-hover">          
+                          <table class="table">
+                            <thead>
+                              <tr>
+                                <th>Price</th>
+                                <th>Size</th>
+                                <th>Total Size</th>
+                                <th>Average Price</th>                             
+                              </tr>
+                            </thead>
+                            <tbody>
+                                <tr *ngFor="let cell of assetHistory; index as i;">                                          
+                                    <td>{{cell.inr}}</td>
+                                    <td>{{cell.btc}}</td>
+                                    <td>{{cell.total|number:'1.2-2'}}</td>
+                                    <td>{{cell.avg|number:'1.2-2'}}</td>
+                                </tr>
+                                                                                 
+                            </tbody>
+                          </table>
+                          </div>
+                  </div>
+                </div>
+          </div>
+          <div class="col-md-4">
+              <div class="panel panel-default">
+                  <div class="panel-heading" style="text-align: center"><b>Place Buy Order</b></div>
+                  <div class="panel-body">
+                    <form  [formGroup]="myangForm" (ngSubmit)="onSubmit()">
+                      <div class="form-group">
+                          <label for="usr">BTC:</label>
+                          <input type="number" placeholder="BTC" ng-trim="true"  class="form-control" formControlName="btc"  autocomplete="off" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="usr">Price:</label>
+                            <input type="number"  placeholder="Price" ng-trim="true"  class="form-control" formControlName="price"  autocomplete="off" required>
+                          </div>
+                          <div class="form-group">
+                              <label for="usr">Average Price:</label>
+                              <input type="number" placeholder="Average Price" ng-trim="true"  class="form-control" formControlName="avgprice"  autocomplete="off" required>
+                            </div>
+                            <div class="form-group">
+                                <label for="usr">Required INR:</label>
+                                <input type="number" placeholder="Required INR" ng-trim="true"  class="form-control" formControlName="reqinr"  autocomplete="off" required>
+                              </div>
+                              <div class="form-group">
+                                  <label for="usr">Available INR:</label>
+                                  <input type="number" placeholder="Available INR" ng-trim="true"  class="form-control" formControlName="avalinr"  autocomplete="off" required>
+                                </div>                                
+                                <div class="form-group">
+                                    <button type="submit"  [disabled]="!myangForm.valid" class="btn btn-primary">BUY</button>                             
+                                </div>
+                                </form>                           
+                  </div>
+                </div>
+          </div>
+          <div class="col-md-4">
+              <div class="panel panel-default">
+                  <div class="panel-heading" style="text-align: center"><b>Open Buy Order</b></div>
+                  <div class="panel-body">
+                      <div class="table-responsive tablesize table-striped table-hover">          
+                          <table class="table">
+                            <thead>
+                              <tr>
+                                <th>Size</th>
+                                <th>Price</th>
+                                <th>Fill</th>                                
+                              </tr>
+                            </thead>
+                            <tbody>
+                                <tr *ngFor="let cell of buyHistory; index as i;">                                               
+                                    <td>{{cell.btc}}</td>
+                                    <td>{{cell.inr}}</td>
+                                    <td>N/A</td>                                   
+                                </tr>
+                            </tbody>
+                          </table>
+                          </div>
+                  </div>
+                </div>
+          </div>
+        </div>       
+        
+        <div class="row">
+            <div class="col-md-4">
+                <div class="panel panel-default">
+                    <div class="panel-heading" style="text-align: center"><b>Sell Details</b></div>
+                    <div class="panel-body">
+                        <div class="table-responsive tablesize2 table-striped table-hover">          
+                            <table class="table">
+                              <thead>
+                                <tr>
+                                  <th>Price</th>
+                                  <th>Size</th>
+                                  <th>Total Size</th>
+                                  <th>Average Price</th>                               
+                                </tr>
+                              </thead>
+                              <tbody>
+                                  <tr *ngFor="let cell of assetHistory1; index as i;">                                           
+                                      <td>{{cell.price}}</td>
+                                      <td>{{cell.btc}}</td>
+                                      <td>{{cell.total|number:'1.2-2'}}</td>
+                                      <td>{{cell.avg|number:'1.2-2'}}</td>
+                                  </tr>    
+                              </tbody>
+                            </table>
+                            </div>
+                    </div>
+                  </div>
+            </div>
+            <div class="col-md-4">
+                <div class="panel panel-default">
+                    <div class="panel-heading" style="text-align: center"><b>Place Sell Order</b></div>
+                    <div class="panel-body">
+                        <form  [formGroup]="sellangForm" (ngSubmit)="onSell()">
+                        <div class="form-group">
+                            <label for="usr">Enter Your BTC:</label>
+                            <input type="number" class="form-control" placeholder="Enter Your BTC" ng-trim="true"  class="form-control" formControlName="sellbtc"  autocomplete="off" required>
+                          </div>
+                          <div class="form-group">
+                              <label for="usr">Enter Price:</label>
+                              <input type="number" class="form-control" placeholder="Enter Price" ng-trim="true"  class="form-control" formControlName="sellprice"  autocomplete="off" required>
+                            </div>
+                            <div class="form-group">
+                                <button type="submit"  [disabled]="!sellangForm.valid" class="btn btn-primary">SELL</button>                             
+                            </div>
+                            </form>                        
+                    </div>
+                  </div>
+            </div>
+            <div class="col-md-4">
+                <div class="panel panel-default">
+                    <div class="panel-heading" style="text-align: center"><b>Open Sell Order</b></div>
+                    <div class="panel-body">
+                        <div class="table-responsive tablesize2 table-striped table-hover">          
+                            <table class="table">
+                              <thead>
+                                <tr>
+                                  <th>Size</th>
+                                  <th>Price</th>
+                                  <th>Fill</th>                                  
+                                </thead>
+                                <tbody>
+                                  <tr *ngFor="let cell of sellHistory; index as i;">                                   
+                                      <td>{{cell.btc}}</td>
+                                      <td>{{cell.price}}</td>
+                                      <td>N/A</td>                                      
+                                  </tr>                                                        
+                              </tbody>
+                            </table>
+                            </div>
+                    </div>
+                  </div>
+            </div>
+          </div>
+  </div>

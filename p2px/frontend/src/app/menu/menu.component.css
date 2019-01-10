@@ -1,0 +1,50 @@
+@import url('https://fonts.googleapis.com/css?family=Source+Sans+Pro');
+.mycolor{
+    background-color: #2471A3;
+    color:white;    
+}
+
+.up {
+    margin-top: 5%;
+    /* margin-left: 2%; */
+    /* margin-right: 2%;  */
+}
+.down{
+    margin-top:5%;
+}
+
+
+.text-input {
+    border-bottom: solid 1px wheat;
+    border-top: none;
+    border-left: none;
+    border-right: none;    
+}
+input[type="text"]:focus{
+   
+    outline: none;
+
+}
+
+.tablebackgroundcolour{
+    background-color: white;
+}
+
+.tablesize{
+    height:400px;
+    overflow: auto;
+}
+
+.tablesize2{
+    height:280px;
+    overflow: auto;
+}
+
+.formsize{
+    font-size: 13px;
+    /* font-weight: 600; */
+    font-family: "Source Sans Pro", sans-serif;
+    
+}
+
+
